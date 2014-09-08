@@ -1,0 +1,34 @@
+<%= simple_form_for @aprendiz, :html => { :class => 'form-horizontal' } do |f| %>
+<div class="form-inputs">
+  <%= f.input :nombre %>
+</div>
+
+<div class="form-inputs">
+  <%= f.input :apellido %>
+</div>
+
+<div class="form-inputs">
+  <%= f.input :identificacion %>
+</div>
+
+<div class="field">
+Centro: 
+<%= f.collection_select :centro_id, Centro.all, :id, :nombre, class: "form-control", prompt: "Seleccione Centro" %>
+</div>
+
+<div class="field">
+Programa:
+<%= f.collection_select :programa_id, Programa.all, :id, :nombre, class: "form-control", prompt: "Seleccione Programa" %>
+</div>
+
+<div class="form-inputs">
+  <%= f.input :ficha %>
+</div>
+
+
+  <div class="form-actions">
+    <%= f.button :submit, 'Crear aprendiz', :class => 'btn-primary' %>
+    <%= link_to t('.cancelar', :default => t("helpers.links.cancel")),
+                aprendices_path, :class => 'btn' %>
+  </div>
+<% end %>

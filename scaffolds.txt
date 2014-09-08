@@ -1,0 +1,9 @@
+Se debe eliminar unas columnas de la base de datos, para esto lo hacemos con una migración que los remueva
+rails g migration RemoveCentrosAndProgramasFromAprendices centro:string programa:string
+
+Agregar columnas removidas con la referencia adecuada
+rails g migration AddCentroAndProgramaToAprendices centro:references programa:references
+
+Hacer migracion a la base de datos de la columna de aprendices
+rake db:migrate
+

@@ -1,0 +1,59 @@
+<%- model_class = Aprendiz -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+  <%= form_tag aprendices_path, :method => 'get' do %>
+    <% content_tag :label do %>
+      <br>
+        Identificación:
+        <%= text_field_tag :search, params[:search] %>
+        <%= submit_tag "Buscar", :name => nil %>
+      </br>
+    <%end%>
+  <%end%>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:nombre) %></th>
+      <th><%= model_class.human_attribute_name(:apellido) %></th>
+      <th><%= model_class.human_attribute_name(:identificacion) %></th>
+      <th><%= model_class.human_attribute_name(:centro) %></th>
+      <th><%= model_class.human_attribute_name(:programa) %></th>
+      <th><%= model_class.human_attribute_name(:ficha) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.acciones") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @aprendices.each do |aprendiz| %>
+      <tr>
+        <td><%= link_to aprendiz.id, aprendiz_path(aprendiz) %></td>
+        <td><%= aprendiz.nombre %></td>
+        <td><%= aprendiz.apellido %></td>
+        <td><%= aprendiz.identificacion %></td>
+        <td><%= aprendiz.centro.nombre rescue nil %></td>
+        <td><%= aprendiz.programa.nombre rescue nil %></td>
+        <td><%= aprendiz.ficha %></td>
+        <td><%=l aprendiz.created_at %></td>
+        <td>
+          <%= link_to 'Ver', aprendiz , :class => 'btn btn-mini' %>
+          <%= link_to t('.edit', :default => t("helpers.links.Editar")),
+                      edit_aprendiz_path(aprendiz), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.Eliminar")),
+                      aprendiz_path(aprendiz),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirmar", :default => 'Esta seguro?')) }, :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.Nuevo aprendiz")),
+            new_aprendiz_path,
+            :class => 'btn btn-primary' %>
+
+<%= will_paginate @aprendices, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente &raquo;' %>
+<br>
+Aprendices: <%= @aprendices.count %>

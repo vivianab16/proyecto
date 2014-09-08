@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  aprendiz: MyString
+  funcionario: MyString
+  instructor: MyString
+  empleado: MyString
+  otro: MyString
+
+two:
+  aprendiz: MyString
+  funcionario: MyString
+  instructor: MyString
+  empleado: MyString
+  otro: MyString
