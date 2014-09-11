@@ -54,6 +54,14 @@
             new_aprendiz_path,
             :class => 'btn btn-primary' %>
 
+<%= link_to t('.new', :default => t("helpers.links.Nuevo instructor")),
+            new_aprendiz_path,
+            :class => 'btn btn-primary' %>
+
+<%= link_to t('.new', :default => t("helpers.links.Nuevo empleado")),
+            new_aprendiz_path,
+            :class => 'btn btn-primary' %>
+
 <%= will_paginate @aprendices, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente &raquo;' %>
 <br>
 Aprendices: <%= @aprendices.count %>

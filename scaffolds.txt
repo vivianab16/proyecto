@@ -7,3 +7,16 @@ rails g migration AddCentroAndProgramaToAprendices centro:references programa:re
 Hacer migracion a la base de datos de la columna de aprendices
 rake db:migrate
 
+Agregue boton nuevo para funcionarios, instructores y empleados en el index de aprendices (visitantes)
+EJEMPLO: 
+<%= link_to t('.new', :default => t("helpers.links.Nuevo funcionario")),
+            new_aprendiz_path,
+            :class => 'btn btn-primary' %>
+
+Cree scaffold funcionario 
+rails g scaffold funcionario nombre:string apellidos:string identificacion:string centro:references programa:references
+
+Migre scaffold funcionario
+rake db:migrate
+
+Modificar las vistas, controladores, models

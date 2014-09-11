@@ -1,0 +1,7 @@
+<div class="container">
+	<%- model_class = funcionario -%>
+	<div class="page-header">
+ 	 <h1><%=t '.title', :default => [:'helpers.titles.nuevo', 'Nuevo %{model}'], :model => model_class.model_name.human.titleize %></h1>
+	</div>
+	<%= render :partial => 'form' %>
+</div>

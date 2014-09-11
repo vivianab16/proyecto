@@ -1,4 +1,5 @@
 <%= simple_form_for @aprendiz, :html => { :class => 'form-horizontal' } do |f| %>
+
 <div class="form-inputs">
   <%= f.input :nombre %>
 </div>
@@ -28,7 +29,7 @@ Programa:
 
   <div class="form-actions">
     <%= f.button :submit, 'Crear aprendiz', :class => 'btn-primary' %>
-    <%= link_to t('.cancelar', :default => t("helpers.links.cancel")),
+    <%= link_to t('.cancelar', :default => t("helpers.links.cancelar")),
                 aprendices_path, :class => 'btn' %>
   </div>
 <% end %>

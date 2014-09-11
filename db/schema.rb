@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140905224838) do
+ActiveRecord::Schema.define(version: 20140911001036) do
 
   create_table "aprendices", force: true do |t|
     t.string   "nombre"
@@ -27,12 +27,12 @@ ActiveRecord::Schema.define(version: 20140905224838) do
   add_index "aprendices", ["centro_id"], name: "index_aprendices_on_centro_id"
   add_index "aprendices", ["programa_id"], name: "index_aprendices_on_programa_id"
 
-  create_table "aprendizs", force: true do |t|
-    t.string   "nombre"
-    t.string   "identificacion"
-    t.string   "programa"
-    t.string   "ficha"
-    t.string   "centro"
+  create_table "asistentes", force: true do |t|
+    t.string   "aprendiz"
+    t.string   "funcionario"
+    t.string   "instructor"
+    t.string   "empleado"
+    t.string   "otro"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -43,18 +43,21 @@ ActiveRecord::Schema.define(version: 20140905224838) do
     t.datetime "updated_at"
   end
 
-  create_table "programas", force: true do |t|
+  create_table "funcionarios", force: true do |t|
     t.string   "nombre"
+    t.string   "apellidos"
+    t.string   "identificacion"
+    t.integer  "centro_id"
+    t.integer  "programa_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "visitantes", force: true do |t|
-    t.string   "aprendiz"
-    t.string   "funcionario"
-    t.string   "instructor"
-    t.string   "empleado"
-    t.string   "otro"
+  add_index "funcionarios", ["centro_id"], name: "index_funcionarios_on_centro_id"
+  add_index "funcionarios", ["programa_id"], name: "index_funcionarios_on_programa_id"
+
+  create_table "programas", force: true do |t|
+    t.string   "nombre"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
