@@ -56,7 +56,7 @@ class VisitantesController < ApplicationController
   def destroy
     @visitante.destroy
     respond_to do |format|
-      format.html { redirect_to visitantes_url, notice: 'Visitante eliminado con exito.' }
+      format.html { redirect_to visitantes_url, notice: 'Visitante eliminado satisfactoriamente.' }
       format.json { head :no_content }
     end
   end

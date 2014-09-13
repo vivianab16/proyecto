@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  
+  resources :instructores
+
   resources :funcionarios
 
   resources :programas

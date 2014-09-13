@@ -14,7 +14,6 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:nombre) %></th>
       <th><%= model_class.human_attribute_name(:apellido) %></th>
       <th><%= model_class.human_attribute_name(:identificacion) %></th>
@@ -28,7 +27,6 @@
   <tbody>
     <% @aprendices.each do |aprendiz| %>
       <tr>
-        <td><%= link_to aprendiz.id, aprendiz_path(aprendiz) %></td>
         <td><%= aprendiz.nombre %></td>
         <td><%= aprendiz.apellido %></td>
         <td><%= aprendiz.identificacion %></td>
@@ -54,13 +52,7 @@
             new_aprendiz_path,
             :class => 'btn btn-primary' %>
 
-<%= link_to t('.new', :default => t("helpers.links.Nuevo instructor")),
-            new_aprendiz_path,
-            :class => 'btn btn-primary' %>
 
-<%= link_to t('.new', :default => t("helpers.links.Nuevo empleado")),
-            new_aprendiz_path,
-            :class => 'btn btn-primary' %>
 
 <%= will_paginate @aprendices, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente &raquo;' %>
 <br>

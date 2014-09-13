@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140911001036) do
+ActiveRecord::Schema.define(version: 20140912233840) do
 
   create_table "aprendices", force: true do |t|
     t.string   "nombre"
@@ -55,6 +55,19 @@ ActiveRecord::Schema.define(version: 20140911001036) do
 
   add_index "funcionarios", ["centro_id"], name: "index_funcionarios_on_centro_id"
   add_index "funcionarios", ["programa_id"], name: "index_funcionarios_on_programa_id"
+
+  create_table "instructores", force: true do |t|
+    t.string   "nombre"
+    t.string   "apellidos"
+    t.string   "identificacion"
+    t.integer  "centro_id"
+    t.integer  "programa_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "instructores", ["centro_id"], name: "index_instructores_on_centro_id"
+  add_index "instructores", ["programa_id"], name: "index_instructores_on_programa_id"
 
   create_table "programas", force: true do |t|
     t.string   "nombre"

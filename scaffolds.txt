@@ -1,22 +1,30 @@
-Se debe eliminar unas columnas de la base de datos, para esto lo hacemos con una migración que los remueva
+- Se debe eliminar unas columnas de la base de datos, para esto lo hacemos con una migración que los remueva
 rails g migration RemoveCentrosAndProgramasFromAprendices centro:string programa:string
 
-Agregar columnas removidas con la referencia adecuada
+- Agregar columnas removidas con la referencia adecuada
 rails g migration AddCentroAndProgramaToAprendices centro:references programa:references
 
-Hacer migracion a la base de datos de la columna de aprendices
+- Hacer migracion a la base de datos de la columna de aprendices
 rake db:migrate
 
-Agregue boton nuevo para funcionarios, instructores y empleados en el index de aprendices (visitantes)
+- Agregue boton nuevo para funcionarios, instructores y empleados en el index de aprendices (visitantes)
 EJEMPLO: 
 <%= link_to t('.new', :default => t("helpers.links.Nuevo funcionario")),
             new_aprendiz_path,
             :class => 'btn btn-primary' %>
 
-Cree scaffold funcionario 
+- Cree scaffold funcionario 
 rails g scaffold funcionario nombre:string apellidos:string identificacion:string centro:references programa:references
 
-Migre scaffold funcionario
+- Migre scaffold funcionario
 rake db:migrate
 
-Modificar las vistas, controladores, models
+- Modificar las vistas, controladores y models de funcionarios
+
+- Cree scaffold instructor 
+rails g scaffold instructor nombre:string apellidos:string identificacion:string centro:references programa:references
+
+- Migre scaffold instructor
+rake db:migrate
+
+- Modificar las vistas, controladores y models de instructores

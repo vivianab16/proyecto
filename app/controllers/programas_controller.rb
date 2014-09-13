@@ -28,7 +28,7 @@ class ProgramasController < ApplicationController
 
     respond_to do |format|
       if @programa.save
-        format.html { redirect_to @programa, notice: 'Programa was successfully created.' }
+        format.html { redirect_to @programa, notice: 'Programa creado satisfactoriamente.' }
         format.json { render :show, status: :created, location: @programa }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class ProgramasController < ApplicationController
   def update
     respond_to do |format|
       if @programa.update(programa_params)
-        format.html { redirect_to @programa, notice: 'Programa was successfully updated.' }
+        format.html { redirect_to @programa, notice: 'Programa actualizado satisfactoriamente.' }
         format.json { render :show, status: :ok, location: @programa }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class ProgramasController < ApplicationController
   def destroy
     @programa.destroy
     respond_to do |format|
-      format.html { redirect_to programas_url, notice: 'Programa was successfully destroyed.' }
+      format.html { redirect_to programas_url, notice: 'Programa eliminado satisfactoriamente.' }
       format.json { head :no_content }
     end
   end

@@ -14,12 +14,12 @@
 
   <div class="field">
     Centro: 
-    <%= f.collection_select :centro, Centro.all, :id, :nombre, class: "form-control", prompt: "Seleccione Centro" %>
+    <%= f.collection_select :centro_id, Centro.all, :id, :nombre, class: "form-control", prompt: "Seleccione Centro" %>
   </div>
 
   <div class="field">
     Programa:
-    <%= f.collection_select :programa, Programa.all, :id, :nombre, class: "form-control", prompt: "Seleccione Programa"%>
+    <%= f.collection_select :programa_id, Programa.all, :id, :nombre, class: "form-control", prompt: "Seleccione Programa"%>
   </div>
 
   <div class="form-actions">
