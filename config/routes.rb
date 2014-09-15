@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :confeccion
+
   resources :instructores
 
   resources :funcionarios

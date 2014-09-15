@@ -1,0 +1,12 @@
+<%= simple_form_for(@confeccion) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :ficha %>
+    <%= f.association :programa %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

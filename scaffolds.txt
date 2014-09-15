@@ -28,3 +28,14 @@ rails g scaffold instructor nombre:string apellidos:string identificacion:string
 rake db:migrate
 
 - Modificar las vistas, controladores y models de instructores
+
+// Lunes
+
+- Creacion de inflecciones para confeccion, cuero, mobiliario y otro
+Ejm: inflect.irregular 'Confeccion', 'Confeccion'
+
+- Creacion de scaffold Confeccion
+rails g scaffold Confeccion ficha:references programa:references
+
+-Migrar el scaffold
+rake db:migrate

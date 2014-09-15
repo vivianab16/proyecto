@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Ficha:</strong>
+  <%= @confeccion.ficha %>
+</p>
+
+<p>
+  <strong>Programa:</strong>
+  <%= @confeccion.programa %>
+</p>
+
+<%= link_to 'Edit', edit_confeccion_path(@confeccion) %> |
+<%= link_to 'Back', confeccion_index_path %>
