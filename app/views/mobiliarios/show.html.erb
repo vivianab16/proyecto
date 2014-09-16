@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Ficha:</strong>
+  <%= @mobiliario.ficha %>
+</p>
+
+<p>
+  <strong>Programa:</strong>
+  <%= @mobiliario.programa %>
+</p>
+
+<%= link_to 'Edit', edit_mobiliario_path(@mobiliario) %> |
+<%= link_to 'Back', mobiliarios_path %>

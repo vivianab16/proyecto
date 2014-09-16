@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :mobiliarios
+
   resources :cueros
 
   resources :confeccion

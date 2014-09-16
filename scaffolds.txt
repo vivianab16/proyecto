@@ -45,3 +45,9 @@ rails g scaffold Cuero ficha:references programa:references
 
 -Migrar el scaffold
 rake db:migrate
+
+- Creacion de scaffold Mobiliario
+rails g scaffold Mobiliario ficha:references programa:references
+
+-Migrar el scaffold
+rake db:migrate

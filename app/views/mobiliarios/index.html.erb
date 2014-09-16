@@ -1,0 +1,27 @@
+<h1>Listing mobiliarios</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ficha</th>
+      <th>Programa</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mobiliarios.each do |mobiliario| %>
+      <tr>
+        <td><%= mobiliario.ficha %></td>
+        <td><%= mobiliario.programa %></td>
+        <td><%= link_to 'Show', mobiliario %></td>
+        <td><%= link_to 'Edit', edit_mobiliario_path(mobiliario) %></td>
+        <td><%= link_to 'Destroy', mobiliario, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mobiliario', new_mobiliario_path %>
