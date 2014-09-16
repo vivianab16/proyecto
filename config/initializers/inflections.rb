@@ -9,8 +9,6 @@ ActiveSupport::Inflector.inflections(:en) do |inflect|
    inflect.irregular 'Aprendiz', 'Aprendices'
    inflect.irregular 'Instructor', 'Instructores'
    inflect.irregular 'Confeccion', 'Confeccion'
-   inflect.irregular 'Cuero', 'Cuero'
-   inflect.irregular 'Mobiliario', 'Mobiliario'
 
 #   inflect.uncountable %w( fish sheep )
  end

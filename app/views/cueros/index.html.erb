@@ -1,0 +1,27 @@
+<h1>Listing cueros</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ficha</th>
+      <th>Programa</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cueros.each do |cuero| %>
+      <tr>
+        <td><%= cuero.ficha %></td>
+        <td><%= cuero.programa %></td>
+        <td><%= link_to 'Show', cuero %></td>
+        <td><%= link_to 'Edit', edit_cuero_path(cuero) %></td>
+        <td><%= link_to 'Destroy', cuero, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cuero', new_cuero_path %>

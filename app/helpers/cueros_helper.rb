@@ -1,0 +1,2 @@
+module CuerosHelper
+end
