@@ -37,17 +37,29 @@ Ejm: inflect.irregular 'Confeccion', 'Confeccion'
 - Creacion de scaffold Confeccion
 rails g scaffold Confeccion ficha:references programa:references
 
--Migrar el scaffold
+-Migrar el scaffold Confeccion
 rake db:migrate
 
 - Creacion de scaffold Cuero
 rails g scaffold Cuero ficha:references programa:references
 
--Migrar el scaffold
+-Migrar el scaffold Cuero
 rake db:migrate
 
 - Creacion de scaffold Mobiliario
 rails g scaffold Mobiliario ficha:references programa:references
 
--Migrar el scaffold
+-Migrar el scaffold Mobiliario
+rake db:migrate
+
+- Creacion de scaffold Empleado
+rails g scaffold Empleado nombre:string apellidos:string identificacion:string cargo:references mail:string tel:string
+
+-Migrar el scaffold de Empleado
+rake db:migrate
+
+- Creacion de scaffold Cargo
+rails g scaffold Cargo nombrecargo:string
+
+-Migrar el scaffold Cargo
 rake db:migrate

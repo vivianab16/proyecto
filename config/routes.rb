@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :cargos
+
   resources :empleados
 
   resources :mobiliarios
