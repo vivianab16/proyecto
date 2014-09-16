@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :empleados
+
   resources :mobiliarios
 
   resources :cueros
